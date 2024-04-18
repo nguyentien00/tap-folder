@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Yomogi&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to bottom right, #dd80b8, #5c207c);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f9d877;
+}
+
+.folder {
+  width: 50rem;
+  scrollbar-height: none;
+}
+
+.tab {
+  background: var(--background);
+  border: 2px solid;
+  border-radius: 6px 6px 0 0;
+  border-width: 2px 0 0;
+  font-family: "Patrick Hand";
+  text-transform: uppercase;
+  line-height: 0.8;
+  display: inline-block;
+  margin-left: -35px;
+  filter: drop-shadow(0px -3px 2px #0000000d);
+  position: relative;
+  margin-right: 4rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab:focus {
+  outline: none;
+}
+
+.tab:focus span {
+  border-bottom: 2px solid;
+  border-radius: 0;
+}
+
+.tab:first-of-type {
+  margin-left: 30px;
+}
+
+.tab div {
+  z-index: 10;
+  background: var(--background);
+  padding: 6px 0;
+  position: relative;
+}
+
+.tab span {
+  z-index: 5;
+  color: #fff;
+  display: inline-block;
+  border: 2px solid transparent;
+  padding: 6px 15px 6px;
+  border-radius: 5px;
+  position: relative;
+  font-size: 140%;
+  min-width: 6rem;
+}
+
+.tab:before,
+.tab:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  background: var(--background);
+  border-top: 2px solid;
+  border-radius: 8px 8px 0 0;
+  width: 30px;
+  top: -2px;
+}
+
+.tab:before {
+  right: -16px;
+  transform: skew(25deg);
+  border-radius: 0 8px 0 0;
+  border-right: 2px solid;
+}
+
+.tab:after {
+  transform: skew(-25deg);
+  left: -16px;
+  border-radius: 8px 0 0 0;
+  border-left: 2px solid;
+}
+
+.tab.active {
+  z-index: 50;
+  position: relative;
+}
+
+.tab.active span {
+  background: white;
+  box-shadow: 0 2px 3px #0000001a;
+  border-radius: 5px;
+  color: black;
+}
+
+.content {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.content__inner:first-child {
+  display: block;
+}
+
+.content:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.content__inner {
+  z-index: 5;
+  font-family: "Yomogi", sans-serif;
+  font-size: 120%;
+  display: none;
+  background: var(--background);
+  border-radius: inherit;
+  padding: 1rem;
+  filter: drop-shadow(0px -2px 2px rgba(0, 0, 0, 0.1));
+  box-shadow: 0 0 0 1.5px black;
+}
+
+.page {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2px;
+  min-height: 20rem;
+  line-height: 160%;
+  background-color: #f9f9f9;
+  filter: drop-shadow(0px 1px 3px #00000026);
+  background-image: linear-gradient(#e4e4e4 1px, transparent 1px);
+  background-size: 8% 8%, 2px 2px;
+}
+
+.tabs {
+  padding: 2rem 0 0 0;
+  width: 100%;
+  margin: 0 0.5rem;
+  overflow-x: auto;
+  width: calc(100% - 1rem);
+  white-space: nowrap;
+}
+
+
+.tab:nth-of-type(1),
+.content__inner:nth-of-type(1) {
+  --background: #af4d98;
+}
+
+.tab:nth-of-type(2),
+.content__inner:nth-of-type(2) {
+  --background: #d66ba0;
+}
+
+.tab:nth-of-type(3),
+.content__inner:nth-of-type(3) {
+  --background: #e5a9a9;
+}
+
+.tab:nth-of-type(4),
+.content__inner:nth-of-type(4) {
+  --background: #6cb6bb;
+}
+
+.tab.active span {
+  border: 2px solid;
+}
+
+.tab:not(.active) {
+  border-bottom: 2px solid;
+}
+
+.tab:not(.active):before,
+.tab:not(.active):after {
+  box-shadow: 0 1.5px 0 black;
+}
+
+.content {
+  top: -2px;
+  left: -2px;
+}
